@@ -3,6 +3,8 @@ const logger = require("morgan");
 const cors = require("cors");
 
 const mongoose = require("mongoose");
+const dotenv = require("dotenv");
+dotenv.config();
 
 const { DB_HOST } = process.env;
 
