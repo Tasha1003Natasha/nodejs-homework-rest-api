@@ -18,7 +18,10 @@ const userSchema = new Schema(
       enum: ["starter", "pro", "business"],
       default: "starter",
     },
-    // token: String,
+    token: {
+      type: String,
+      default: "",
+    },
   },
   { versionKey: false, timestamps: true }
 );
@@ -29,11 +32,17 @@ const registerSchema = Joi.object({
   password: Joi.string().required(),
   email: Joi.string().required(),
   subscription: Joi.string(),
-  //   token: Joi.string(),
+  token: Joi.string(),
+});
+
+const loginSchema = Joi.object({
+  password: Joi.string().required(),
+  email: Joi.string().required(),
 });
 
 const schemas = {
   registerSchema,
+  loginSchema,
 };
 
 const User = model("user", userSchema);
