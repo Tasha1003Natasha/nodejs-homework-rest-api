@@ -6,7 +6,7 @@ const listContacts = async (req, res) => {
   const skip = (page - 1) * limit;
 
   if (req.query.favorite) {
-    const { favorite = true } = req.query;
+    const { favorite } = req.query;
     const resultFilter = await Contact.find(
       { owner, favorite },
       "-createdAt -updatedAt",
