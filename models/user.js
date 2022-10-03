@@ -34,6 +34,7 @@ const userSchema = new Schema(
 userSchema.post("save", handleSaveErrors);
 
 const registerSchema = Joi.object({
+  name: Joi.string().required(),
   password: Joi.string().required(),
   email: Joi.string().required(),
   subscription: Joi.string(),
