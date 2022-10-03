@@ -4,6 +4,11 @@ const handleSaveErrors = require("../middlewares/handleSaveErrors");
 
 const userSchema = new Schema(
   {
+    name: {
+      type: String,
+      required: [true, "Set name for contact"],
+      default: "Guest",
+    },
     password: {
       type: String,
       required: [true, "Set password for user"],

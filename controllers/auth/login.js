@@ -8,7 +8,7 @@ const { RequestError } = require("../../helpers");
 const { SECRET_KEY } = process.env;
 
 const login = async (req, res) => {
-  const { password, email } = req.body;
+  const { password, email} = req.body;
   const user = await User.findOne({ email });
   if (!user) {
     throw RequestError(401, "Email or password is wrong");
